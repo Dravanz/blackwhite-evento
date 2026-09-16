@@ -28,11 +28,11 @@ window.BW = {
 
   // Carrossel pequeno de fotos (bastidores). legenda é opcional
   bastidores: [
-    { foto: "assets/douglas-dalessandro.jpg", legenda: "Douglas & D'Alessandro" },
-    { foto: "assets/belo-suarez.jpg", legenda: "Belo Barber & Suárez" },
-    { foto: "assets/robert-garotada.jpg", legenda: "Robert & a garotada" },
-    { foto: "assets/douglas-alanpatrick.jpg", legenda: "Douglas & Alan Patrick" },
-    { foto: "assets/belo-renato.jpg", legenda: "Belo Barber & Renato" },
+    { foto: "assets/douglas-dalessandro.jpg", legenda: "D'Alessandro" },
+    { foto: "assets/belo-suarez.jpg", legenda: "Suárez" },
+    { foto: "assets/robert-garotada.jpg", legenda: "Projetos" },
+    { foto: "assets/douglas-alanpatrick.jpg", legenda: "Alan Patrick" },
+    { foto: "assets/belo-renato.jpg", legenda: "Renato Gaúcho" },
   ],
 
   // Frases que giram na tela

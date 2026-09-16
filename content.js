@@ -37,6 +37,8 @@ window.BW = {
 
   // Frases que giram na tela
   frases: [
+    "O evento do ano. Você não vai querer ficar de fora.",
+    "Não perca a oportunidade de alavancar o seu negócio.",
     "10 mentes brilhantes pensam melhor do que apenas 1.",
     "Ideia guardada não cresce. Ideia compartilhada vira negócio.",
     "Ninguém chega longe sozinho. Quem chega longe, chega junto.",
@@ -45,6 +47,9 @@ window.BW = {
     "Conhecimento dividido é conhecimento multiplicado.",
     "Oportunidades não batem à porta. Elas sentam ao seu lado.",
     "Sua rede de contatos é o patrimônio que ninguém tira de você.",
+    "Um dia que pode mudar o rumo da sua empresa.",
+    "Quem está no lugar certo, com as pessoas certas, cresce mais rápido.",
+    "As vagas são limitadas. As oportunidades, não.",
   ],
 
   // Fotos/vídeos do evento. Ex.: { src: "assets/foto1.jpg" } ou { src: "assets/video.mp4", video: true }

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Black White · Networking &amp; Oficinas</title>
+  <meta name="description" content="Black White: um dia inteiro de oficinas e networking com empresários renomados. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Black White · Networking &amp; Oficinas">
+  <meta property="og:description" content="Um dia inteiro de oficinas e networking. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='16' height='32' fill='%23fff'/><rect x='16' width='16' height='32' fill='%23000'/><rect x='.5' y='.5' width='31' height='31' fill='none' stroke='%23000'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Yellowtail&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.7-5.6 5 1.7 7.4L12 17.6l-6.6 3.9 1.7-7.4-5.6-5 7.4-.7z"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-12.5a7 7 0 0 0-14 0C5 14.8 12 22 12 22z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.1"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M4 20l1.2-4A8.5 8.5 0 1 1 8.4 19z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 2.8 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.6 4.6 0 0 1-2.4-2.4l.9-1-1-2z"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#topo" class="brand" aria-label="Black White, início"><span>Black</span><span>White</span></a>
+  <a href="#convite" class="nav__cta" data-go="participar">Participar</a>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero__bg" aria-hidden="true"><i></i><i></i></div>
+  <canvas class="hero__net" id="net" aria-hidden="true"></canvas>
+
+  <div class="hero__inner">
+    <p class="hero__tag fx">Oficinas &amp; Networking</p>
+
+    <div class="mark fx">
+      <span class="mark__rule"></span>
+      <h1 class="mark__title">
+        <svg class="mark__star"><use href="#star"/></svg>
+        <span class="mark__k">Black</span><span class="mark__w">White</span>
+        <svg class="mark__star"><use href="#star"/></svg>
+      </h1>
+      <span class="mark__rule"></span>
+    </div>
+
+    <p class="hero__lead fx">Um dia inteiro de oficinas e networking com empresários renomados.</p>
+
+    <div class="hero__info fx">
+      <div><small>Quando</small><b data-bind="dataExtenso">08 de novembro</b></div>
+      <div><small>Onde</small><b><span data-bind="local">Rampa Hub Quartier</span><br><span data-bind="cidade">Pelotas - RS</span></b></div>
+    </div>
+
+    <div class="count fx" id="count">
+      <div><b data-c="d">00</b><small>dias</small></div>
+      <div><b data-c="h">00</b><small>horas</small></div>
+      <div><b data-c="m">00</b><small>min</small></div>
+      <div><b data-c="s">00</b><small>seg</small></div>
+    </div>
+
+    <div class="hero__cta fx">
+      <a href="#convite" class="btn btn--light" data-go="participar">Quero estar lá <svg><use href="#arrow"/></svg></a>
+      <a href="#patrocinio" class="btn btn--outline" data-go="patrocinar">Seja patrocinador</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA -->
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+
+<!-- MANIFESTO -->
+<section class="manifest light" id="evento">
+  <div class="wrap">
+    <p class="eyebrow up">O encontro</p>
+    <h2 class="big up">Juntos, o preto e o branco formam o <em>quadro completo</em>.</h2>
+    <p class="text up">O <strong>Black White</strong> nasce de uma ideia simples: ninguém cresce isolado. Durante um dia inteiro, barbeiros, empresários e marcas dividem o mesmo espaço para trocar experiências, fazer perguntas e criar conexões que continuam muito depois do evento.</p>
+    <p class="text up">Não é sobre quem você já conhece. É sobre <strong>quem você vai conhecer</strong>.</p>
+  </div>
+
+  <div class="minds up" id="minds">
+    <svg class="minds__svg" viewBox="0 0 320 320" aria-hidden="true"></svg>
+    <div class="minds__label">
+      <b>10</b>
+      <span>mentes brilhantes pensam melhor do que apenas <b>1</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- PALESTRANTES (centro da página) -->
+<section class="speakers dark" id="palestrantes">
+  <div class="wrap">
+    <p class="eyebrow up">Idealizadores do evento</p>
+    <h2 class="big up">As <em>mentes brilhantes</em> por trás do projeto.</h2>
+    <p class="text up">Três profissionais que transformaram a cadeira em marca, atenderam grandes nomes do esporte e agora abrem a mesa para quem quer crescer junto.</p>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel__track" id="track"></div>
+    <div class="carousel__ui">
+      <button class="carousel__btn" data-dir="-1" aria-label="Anterior"><svg><use href="#chev"/></svg></button>
+      <div class="carousel__dots" id="dots"></div>
+      <button class="carousel__btn carousel__btn--next" data-dir="1" aria-label="Próximo"><svg><use href="#chev"/></svg></button>
+    </div>
+  </div>
+
+  <div class="strip" id="strip" hidden>
+    <div class="wrap"><p class="strip__title up">Por trás das cadeiras <small>arraste para o lado</small></p></div>
+    <div class="strip__track" id="stripTrack"></div>
+  </div>
+</section>
+
+<!-- FRASES -->
+<section class="phrases" id="frases">
+  <div class="phrases__half" aria-hidden="true"></div>
+  <div class="wrap phrases__inner">
+    <svg class="phrases__star" aria-hidden="true"><use href="#star"/></svg>
+    <blockquote id="phrase"></blockquote>
+    <div class="phrases__bar" aria-hidden="true"><i id="phraseBar"></i></div>
+  </div>
+</section>
+
+<!-- GALERIA (aparece quando houver fotos) -->
+<section class="gallery light" id="galeria" hidden>
+  <div class="wrap">
+    <p class="eyebrow up">Galeria</p>
+    <div class="gallery__grid" id="gallery"></div>
+  </div>
+</section>
+
+<!-- CONVITE -->
+<section class="invite" id="convite">
+  <article class="invite__card invite__card--w">
+    <p class="eyebrow up">Convite</p>
+    <h3 class="up">Barbeiro</h3>
+    <p class="up">Você domina a cadeira. Agora imagine o que acontece quando você senta à mesa com quem já transformou talento em marca. Venha trocar ideias, ouvir histórias reais e sair com contatos que abrem portas.</p>
+    <a class="btn btn--dark up" data-go="participar" href="#contato">Quero participar <svg><use href="#arrow"/></svg></a>
+  </article>
+  <article class="invite__card invite__card--b">
+    <p class="eyebrow up">Convite</p>
+    <h3 class="up">Empresário</h3>
+    <p class="up">Os melhores negócios não nascem em reuniões formais, nascem em boas conversas. Esteja no ambiente onde ideias circulam, parcerias surgem e pessoas que pensam grande se encontram.</p>
+    <a class="btn btn--light up" data-go="participar" href="#contato">Quero participar <svg><use href="#arrow"/></svg></a>
+  </article>
+</section>
+
+<!-- PATROCÍNIO -->
+<section class="sponsor dark" id="patrocinio">
+  <div class="wrap">
+    <p class="eyebrow up">Patrocínio</p>
+    <h2 class="big up">Sua marca no centro das <em>conexões</em>.</h2>
+    <p class="text up">Um dia inteiro com empresários e profissionais reunidos no mesmo lugar, abertos a conhecer novas marcas, produtos e parceiros. Associe sua empresa a um evento que acredita no poder de crescer junto.</p>
+    <ul class="why">
+      <li class="up"><b>Visibilidade</b><span>Sua marca presente do começo ao fim do dia.</span></li>
+      <li class="up"><b>Público certo</b><span>Quem decide, quem empreende e quem influencia.</span></li>
+      <li class="up"><b>Relacionamento</b><span>Contato direto, sem intermediários.</span></li>
+    </ul>
+    <a class="btn btn--light up" data-go="patrocinar" href="#contato">Quero patrocinar <svg><use href="#arrow"/></svg></a>
+
+    <div class="sponsors" id="sponsors" hidden>
+      <p class="eyebrow">Quem acredita com a gente</p>
+      <div class="sponsors__grid" id="sponsorsGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="place light" id="local">
+  <div class="wrap">
+    <div class="ticket up">
+      <div class="ticket__top">
+        <span class="brand brand--ink"><span>Black</span><span>White</span></span>
+        <small>Oficinas &amp; Networking</small>
+      </div>
+      <dl class="ticket__rows">
+        <div><dt>Data</dt><dd data-bind="dataExtenso">08 de novembro</dd></div>
+        <div><dt>Duração</dt><dd data-bind="horario">Manhã e tarde</dd></div>
+        <div><dt>Local</dt><dd data-bind="local">Rampa Hub Quartier</dd></div>
+        <div><dt>Cidade</dt><dd data-bind="cidade">Pelotas - RS</dd></div>
+      </dl>
+      <a class="ticket__map" id="mapLink" href="#" target="_blank" rel="noopener"><svg><use href="#pin"/></svg> Como chegar</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact dark" id="contato">
+  <div class="wrap">
+    <h2 class="big up">Toda grande parceria começa com um <em>“oi”</em>.</h2>
+    <div class="contact__links up">
+      <a class="btn btn--light" data-go="patrocinar" href="#patrocinio">Patrocinar <svg><use href="#arrow"/></svg></a>
+      <a class="btn btn--outline" data-go="participar" href="#convite"><svg><use href="#wa"/></svg> Quero participar</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span class="brand"><span>Black</span><span>White</span></span>
+  <p><span data-bind="dataExtenso">08 de novembro</span> · <span data-bind="local">Rampa Hub Quartier</span> · <span data-bind="cidade">Pelotas - RS</span></p>
+</footer>
+
+<!-- barra fixa no celular -->
+<a href="#convite" class="dock" id="dock" data-go="participar">Garanta sua vaga <svg><use href="#arrow"/></svg></a>
+
+<script src="content.js?v=6"></script>
+<script src="main.js?v=6"></script>
+</body>
+</html>

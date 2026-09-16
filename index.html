@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Yellowtail&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -113,8 +113,13 @@
   </div>
 
   <div class="strip" id="strip" hidden>
-    <div class="wrap"><p class="strip__title up">Por trás das cadeiras <small>arraste para o lado</small></p></div>
+    <div class="wrap"><p class="strip__title up">Por trás das cadeiras <small class="strip__hint">arraste para o lado</small></p></div>
     <div class="strip__track" id="stripTrack"></div>
+    <div class="strip__ui" id="stripUi">
+      <button class="carousel__btn" data-dir="-1" aria-label="Foto anterior"><svg><use href="#chev"/></svg></button>
+      <div class="carousel__dots" id="stripDots"></div>
+      <button class="carousel__btn carousel__btn--next" data-dir="1" aria-label="Próxima foto"><svg><use href="#chev"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -212,7 +217,7 @@
 <!-- barra fixa no celular -->
 <a href="#convite" class="dock" id="dock" data-go="participar">Garanta sua vaga <svg><use href="#arrow"/></svg></a>
 
-<script src="content.js?v=8"></script>
-<script src="main.js?v=8"></script>
+<script src="content.js?v=9"></script>
+<script src="main.js?v=9"></script>
 </body>
 </html>

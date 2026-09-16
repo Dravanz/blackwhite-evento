@@ -97,8 +97,37 @@
     const fig = img.closest("figure");
     const ok = () => { fig.hidden = false; strip.hidden = false; };
     if (img.complete && img.naturalWidth) ok(); else img.addEventListener("load", ok);
-    img.addEventListener("error", () => fig.remove());
+    img.addEventListener("error", () => { fig.remove(); stripSync(); });
   });
+
+  // setas e bolinhas do carrossel de fotos
+  const stripDots = $("#stripDots");
+  const [sPrev, sNext] = $$(".carousel__btn", $("#stripUi"));
+  const shots = () => $$(".shot", stripTrack).filter((f) => !f.hidden);
+  const stripSync = () => {
+    const list = shots();
+    if (stripDots.children.length !== list.length) {
+      stripDots.innerHTML = list.map((_, i) => `<button aria-label="Foto ${i + 1}"></button>`).join("");
+      $$("button", stripDots).forEach((b, i) => b.addEventListener("click", () => stripGo(i)));
+    }
+    const x = stripTrack.scrollLeft, max = stripTrack.scrollWidth - stripTrack.clientWidth;
+    let best = 0, dist = Infinity;
+    list.forEach((f, i) => { const d = Math.abs(f.offsetLeft - stripTrack.offsetLeft - x); if (d < dist) { dist = d; best = i; } });
+    if (x >= max - 2) best = list.length - 1;
+    $$("button", stripDots).forEach((b, i) => b.setAttribute("aria-current", i === best));
+    sPrev.disabled = x <= 2; sNext.disabled = x >= max - 2;
+    return best;
+  };
+  const stripGo = (i) => {
+    const list = shots(), f = list[Math.max(0, Math.min(list.length - 1, i))];
+    if (f) stripTrack.scrollTo({ left: f.offsetLeft - stripTrack.offsetLeft, behavior: reduced ? "auto" : "smooth" });
+  };
+  sPrev.addEventListener("click", () => stripGo(stripSync() - 1));
+  sNext.addEventListener("click", () => stripGo(stripSync() + 1));
+  stripTrack.addEventListener("scroll", () => requestAnimationFrame(stripSync), { passive: true });
+  addEventListener("resize", stripSync);
+  $$("img", stripTrack).forEach((img) => img.addEventListener("load", () => requestAnimationFrame(stripSync)));
+  stripSync();
 
   const track = $("#track");
   track.innerHTML = D.palestrantes.map((p, i) => {
@@ -125,7 +154,7 @@
   const dots = $("#dots");
   dots.innerHTML = cards.map((_, i) => `<button aria-label="Palestrante ${i + 1}"></button>`).join("");
   const dotBtns = $$("button", dots);
-  const [prev, next] = $$(".carousel__btn");
+  const [prev, next] = $$(".carousel__btn", $("#carousel"));
   let current = 0;
 
   const goTo = (i) => {
@@ -138,6 +167,7 @@
     cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid); if (d < dist) { dist = d; best = i; } });
     current = best;
     dotBtns.forEach((b, i) => b.setAttribute("aria-current", i === best));
+    cards.forEach((c, i) => c.classList.toggle("is-current", i === best));
     prev.disabled = best === 0; next.disabled = best === cards.length - 1;
   };
   dotBtns.forEach((b, i) => b.addEventListener("click", () => goTo(i)));

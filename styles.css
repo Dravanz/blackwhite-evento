@@ -142,6 +142,8 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
   padding: 0 var(--g) 4px; scroll-padding: 0 var(--g); scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
 .strip__track::-webkit-scrollbar { display: none; }
+.strip__track { scroll-behavior: smooth; }
+.strip__ui { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; padding: 0 var(--g); }
 .shot { flex: 0 0 62%; margin: 0; scroll-snap-align: start; }
 .shot__img { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--k2); }
 .shot__img::before { content: ""; position: absolute; inset: 6px; z-index: 1; border: 1px solid rgba(255,255,255,.3); pointer-events: none; }
@@ -159,6 +161,7 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
 .card__photo { position: relative; aspect-ratio: 4/5; overflow: hidden; }
 .card__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: transform 1s var(--ease), filter 1s; }
 .card:hover .card__photo img { transform: scale(1.05); filter: grayscale(.15); }
+@media (max-width: 899px) { .card.is-current .card__photo img { filter: none; } }
 .card__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(11,11,11,.9)); }
 .card__ph { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(90deg, #1d1d1d 50%, #121212 50%); }
 .card__ph span { font: 400 110px/1 var(--script); color: rgba(246,244,240,.08); }
@@ -179,11 +182,11 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
 .carousel__dots button[aria-current="true"] { background: var(--w); width: 28px; border-radius: 6px; }
 
 /* ---------- frases ---------- */
-.phrases { position: relative; background: var(--k); padding: 90px 0; overflow: hidden; }
+.phrases { position: relative; background: var(--k); padding: 44px 0; overflow: hidden; }
 .phrases__half { display: none; position: absolute; inset: 0 50% 0 0; background: var(--w); }
 .phrases__inner { position: relative; text-align: center; color: var(--w); }
-.phrases__star { font-size: 26px; }
-.phrases blockquote { display: grid; place-items: center; min-height: 6.6em; margin: 18px auto 26px; max-width: 17ch; padding: 0 .15em; font: 400 clamp(34px, 9.4vw, 88px)/1.12 var(--script); transition: opacity .45s ease; }
+.phrases__star { font-size: 20px; }
+.phrases blockquote { display: grid; place-items: center; min-height: 4.5em; margin: 10px auto 18px; max-width: 21ch; padding: 0 .15em; font: 400 clamp(28px, 8vw, 64px)/1.1 var(--script); transition: opacity .45s ease; }
 .phrases blockquote.out { opacity: 0; }
 .phrases__bar { width: 140px; height: 2px; margin: 0 auto; background: rgba(255,255,255,.3); }
 .phrases__bar i { display: block; height: 100%; background: #fff; transform-origin: left; transform: scaleX(0); }
@@ -296,6 +299,8 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
   .strip__track { padding: 0 0 4px; scroll-padding: 0; }
   .shot { flex-basis: calc((100% - 30px) / 3.6); }
   .shot:hover img { filter: none; }
+  .strip__hint { display: none; }
+  .strip__ui { padding: 0; }
 
   /* lado a lado: vira grade, sem carrossel */
   .carousel { max-width: 1180px; margin: 0 auto; padding: 0 var(--g); }
@@ -304,7 +309,9 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
   .card:nth-child(2) { transform: translateY(40px); }
   .carousel__ui { display: none; }
 
-  .phrases { padding: 150px 0; }
+  .phrases { padding: 80px 0; }
+  .phrases blockquote { min-height: 3.4em; max-width: 24ch; margin: 16px auto 22px; }
+  .phrases__star { font-size: 26px; }
   .phrases__half { display: block; }
   .phrases__inner { color: #fff; mix-blend-mode: difference; }
 

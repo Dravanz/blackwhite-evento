@@ -24,6 +24,7 @@ window.BW = {
     { nome: "Robert BlackWhite", titulo: "Idealizadores do evento", foto: "assets/robert.jpg", instagram: "robertcamargobw" },
     { nome: "Douglas", titulo: "Idealizadores do evento", foto: "assets/douglas.jpg", instagram: "douglaas_peereira" },
     { nome: "Belo Barber", titulo: "Idealizadores do evento", foto: "assets/belo.jpg", instagram: "belo.barber" },
+    { nome: "Max Soares", titulo: "Idealizadores do evento", foto: "assets/max.jpg", instagram: "maxsoares71" },
   ],
 
   // Carrossel pequeno de fotos (bastidores). legenda é opcional

@@ -166,8 +166,8 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
 .card__ph { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(90deg, #1d1d1d 50%, #121212 50%); }
 .card__ph span { font: 400 110px/1 var(--script); color: rgba(246,244,240,.08); }
 .card__ph--on { container-type: inline-size; place-items: start center; padding-top: 12%; background: var(--k2); }
-.card__ph--on span { display: grid; place-items: center; width: 30cqw; aspect-ratio: 1; isolation: isolate; background: linear-gradient(90deg, var(--w) 50%, var(--k) 50%); outline: 1px solid rgba(255,255,255,.35); outline-offset: 6px; }
-.card__ph--on i { font: 500 21cqw/1 var(--display); font-style: normal; color: #fff; mix-blend-mode: difference; }
+.card__ph--on span { display: grid; place-items: center; width: 46cqw; aspect-ratio: 1; isolation: isolate; background: linear-gradient(90deg, var(--w) 50%, var(--k) 50%); outline: 1px solid rgba(255,255,255,.35); outline-offset: 6px; }
+.card__ph--on i { font: 500 32cqw/1 var(--display); font-style: normal; color: #fff; mix-blend-mode: difference; }
 .light .carousel__btn { border-color: var(--line-l); }
 .light .carousel__dots button { border-color: var(--k); }
 .light .carousel__dots button[aria-current="true"] { background: var(--k); }
@@ -290,6 +290,8 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
 }
 
 @media (min-width: 900px) {
+  .card__ph--on span { width: 30cqw; }
+  .card__ph--on i { font-size: 21cqw; }
   :root { --g: 56px; }
   .nav { height: 76px; }
   .brand { font-size: 32px; }

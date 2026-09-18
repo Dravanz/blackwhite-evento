@@ -32,7 +32,7 @@ window.BW = {
     { nome: "Robert", titulo: "Palestrante", foto: "assets/robert.jpg", instagram: "robertcamargobw" },
     { nome: "Belo", titulo: "Palestrante", foto: "assets/belo.jpg", instagram: "belo.barber" },
     { nome: "Douglas", titulo: "Palestrante", foto: "assets/douglas.jpg", instagram: "douglaas_peereira" },
-    { nome: "Rodada de perguntas", titulo: "Atração", simbolo: "?", bio: "Microfone aberto: pergunte direto a quem já chegou lá." },
+    { nome: "Rodada de perguntas", titulo: "Atração", simbolo: "?", bio: "Tire suas dúvidas direto com quem já chegou lá." },
     { nome: "Networking ao vivo", titulo: "Atração", simbolo: "∞", bio: "Mesas, conversas e conexões com empresários da região." },
   ],
 

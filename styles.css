@@ -165,6 +165,13 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
 .card__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(11,11,11,.9)); }
 .card__ph { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(90deg, #1d1d1d 50%, #121212 50%); }
 .card__ph span { font: 400 110px/1 var(--script); color: rgba(246,244,240,.08); }
+.card__ph--on { container-type: inline-size; place-items: start center; padding-top: 12%; background: var(--k2); }
+.card__ph--on span { display: grid; place-items: center; width: 30cqw; aspect-ratio: 1; isolation: isolate; background: linear-gradient(90deg, var(--w) 50%, var(--k) 50%); outline: 1px solid rgba(255,255,255,.35); outline-offset: 6px; }
+.card__ph--on i { font: 500 21cqw/1 var(--display); font-style: normal; color: #fff; mix-blend-mode: difference; }
+.light .carousel__btn { border-color: var(--line-l); }
+.light .carousel__dots button { border-color: var(--k); }
+.light .carousel__dots button[aria-current="true"] { background: var(--k); }
+.talks .card { color: var(--w); }
 .card__n { position: absolute; top: 16px; left: 18px; z-index: 1; font: 500 13px/1 var(--display); letter-spacing: .3em; }
 .card__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 20px 20px 22px; }
 .card__role { margin: 0 0 4px; font: 500 11px/1 var(--display); letter-spacing: .3em; text-transform: uppercase; color: var(--mute-d); }
@@ -313,6 +320,9 @@ em { font: 400 1.18em/.8 var(--script); letter-spacing: 0; text-transform: none;
   .card { transition: transform .6s var(--ease); }
   .card:nth-child(even) { transform: translateY(40px); }
   .card h3 { font-size: 30px; }
+  .talks .card h3 { font-size: 24px; }
+  .talks .card__bio { font-size: 13px; }
+  .talks .card__ig span, .talks .card__ig { font-size: 11px; padding: 6px 8px; }
   .carousel__ui { display: none; }
 
   .phrases { padding: 80px 0; }

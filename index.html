@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Black White · Networking &amp; Oficinas</title>
-  <meta name="description" content="Black White: um dia inteiro de oficinas e networking com empresários renomados. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
+  <title>Black White · O evento do ano</title>
+  <meta name="description" content="Black White: um dia inteiro de networking com empresários renomados. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
   <meta name="theme-color" content="#0a0a0a">
-  <meta property="og:title" content="Black White · Networking &amp; Oficinas">
-  <meta property="og:description" content="Um dia inteiro de oficinas e networking. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
+  <meta property="og:title" content="Black White · O evento do ano">
+  <meta property="og:description" content="Um dia inteiro de networking com empresários renomados. 08 de novembro, Rampa Hub Quartier, Pelotas - RS.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='16' height='32' fill='%23fff'/><rect x='16' width='16' height='32' fill='%23000'/><rect x='.5' y='.5' width='31' height='31' fill='none' stroke='%23000'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Yellowtail&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -41,7 +41,7 @@
   <canvas class="hero__net" id="net" aria-hidden="true"></canvas>
 
   <div class="hero__inner">
-    <p class="hero__tag fx">Oficinas &amp; Networking</p>
+    <p class="hero__tag fx">O evento do ano</p>
 
     <div class="mark fx">
       <span class="mark__rule"></span>
@@ -53,7 +53,7 @@
       <span class="mark__rule"></span>
     </div>
 
-    <p class="hero__lead fx">Um dia inteiro de oficinas e networking com empresários renomados.</p>
+    <p class="hero__lead fx">Um dia inteiro de networking com empresários renomados.</p>
 
     <div class="hero__info fx">
       <div><small>Quando</small><b data-bind="dataExtenso">08 de novembro</b></div>
@@ -103,11 +103,11 @@
     <p class="text up">Três profissionais que transformaram a cadeira em marca, atenderam grandes nomes do esporte e agora abrem a mesa para quem quer crescer junto.</p>
   </div>
 
-  <div class="carousel" id="carousel">
-    <div class="carousel__track" id="track"></div>
+  <div class="carousel" id="carousel" data-items="palestrantes">
+    <div class="carousel__track"></div>
     <div class="carousel__ui">
       <button class="carousel__btn" data-dir="-1" aria-label="Anterior"><svg><use href="#chev"/></svg></button>
-      <div class="carousel__dots" id="dots"></div>
+      <div class="carousel__dots"></div>
       <button class="carousel__btn carousel__btn--next" data-dir="1" aria-label="Próximo"><svg><use href="#chev"/></svg></button>
     </div>
   </div>
@@ -130,6 +130,24 @@
     <svg class="phrases__star" aria-hidden="true"><use href="#star"/></svg>
     <blockquote id="phrase"></blockquote>
     <div class="phrases__bar" aria-hidden="true"><i id="phraseBar"></i></div>
+  </div>
+</section>
+
+<!-- PALESTRAS -->
+<section class="speakers talks light" id="palestras">
+  <div class="wrap">
+    <p class="eyebrow up">Palestras &amp; atrações</p>
+    <h2 class="big up">Histórias reais, <em>conversas abertas</em>.</h2>
+    <p class="text up">Robert, Belo e Douglas sobem ao palco para dividir o que aprenderam dentro e fora da cadeira. E aqui ninguém só escuta: você pergunta, participa e sai com novas conexões.</p>
+  </div>
+
+  <div class="carousel" id="talks" data-items="palestras">
+    <div class="carousel__track"></div>
+    <div class="carousel__ui">
+      <button class="carousel__btn" data-dir="-1" aria-label="Anterior"><svg><use href="#chev"/></svg></button>
+      <div class="carousel__dots"></div>
+      <button class="carousel__btn carousel__btn--next" data-dir="1" aria-label="Próximo"><svg><use href="#chev"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -183,7 +201,7 @@
     <div class="ticket up">
       <div class="ticket__top">
         <span class="brand brand--ink"><span>Black</span><span>White</span></span>
-        <small>Oficinas &amp; Networking</small>
+        <small>O evento do ano</small>
       </div>
       <dl class="ticket__rows">
         <div><dt>Data</dt><dd data-bind="dataExtenso">08 de novembro</dd></div>
@@ -221,7 +239,7 @@
 <!-- barra fixa no celular -->
 <a href="#convite" class="dock" id="dock" data-go="participar">Garanta sua vaga <svg><use href="#arrow"/></svg></a>
 
-<script src="content.js?v=10"></script>
-<script src="main.js?v=10"></script>
+<script src="content.js?v=11"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>

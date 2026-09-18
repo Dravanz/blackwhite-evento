@@ -129,16 +129,18 @@
   $$("img", stripTrack).forEach((img) => img.addEventListener("load", () => requestAnimationFrame(stripSync)));
   stripSync();
 
-  const track = $("#track");
-  track.innerHTML = D.palestrantes.map((p, i) => {
-    const n = pad(i + 1);
-    const photo = p.foto
-      ? `<img src="${esc(p.foto)}" alt="${esc(p.nome)}" loading="lazy">`
-      : `<div class="card__ph"><span>BW</span></div>`;
-    const ig = p.instagram
-      ? `<a class="card__ig" href="https://instagram.com/${esc(p.instagram)}" target="_blank" rel="noopener" aria-label="Instagram de ${esc(p.nome)}"><svg><use href="#ig"/></svg>@${esc(p.instagram)}</a>`
-      : "";
-    return `<article class="card" aria-label="Palestrante ${n}">
+  // cartões em carrossel (idealizadores e palestras): lado a lado no desktop
+  const buildCarousel = (root) => {
+    const track = $(".carousel__track", root), dots = $(".carousel__dots", root);
+    track.innerHTML = (D[root.dataset.items] || []).map((p, i) => {
+      const n = pad(i + 1);
+      const photo = p.foto
+        ? `<img src="${esc(p.foto)}" alt="${esc(p.nome)}" loading="lazy">`
+        : `<div class="card__ph${p.simbolo ? " card__ph--on" : ""}">${p.simbolo ? `<span><i>${esc(p.simbolo)}</i></span>` : "<span>BW</span>"}</div>`;
+      const ig = p.instagram
+        ? `<a class="card__ig" href="https://instagram.com/${esc(p.instagram)}" target="_blank" rel="noopener" aria-label="Instagram de ${esc(p.nome)}"><svg><use href="#ig"/></svg>@${esc(p.instagram)}</a>`
+        : "";
+      return `<article class="card" aria-label="${esc(p.nome)}">
       <div class="card__photo">${photo}</div>
       <span class="card__n">${n}</span>
       ${ig}
@@ -148,34 +150,35 @@
         ${p.bio ? `<p class="card__bio">${esc(p.bio)}</p>` : ""}
       </div>
     </article>`;
-  }).join("");
+    }).join("");
 
-  const cards = $$(".card", track);
-  const dots = $("#dots");
-  dots.innerHTML = cards.map((_, i) => `<button aria-label="Palestrante ${i + 1}"></button>`).join("");
-  const dotBtns = $$("button", dots);
-  const [prev, next] = $$(".carousel__btn", $("#carousel"));
-  let current = 0;
+    const cards = $$(".card", track);
+    dots.innerHTML = cards.map((c, i) => `<button aria-label="${esc(c.getAttribute("aria-label"))}"></button>`).join("");
+    const dotBtns = $$("button", dots);
+    const [prev, next] = $$(".carousel__btn", root);
+    let current = 0;
 
-  const goTo = (i) => {
-    const card = cards[Math.max(0, Math.min(cards.length - 1, i))];
-    track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.clientWidth) / 2, behavior: reduced ? "auto" : "smooth" });
+    const goTo = (i) => {
+      const card = cards[Math.max(0, Math.min(cards.length - 1, i))];
+      track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.clientWidth) / 2, behavior: reduced ? "auto" : "smooth" });
+    };
+    const sync = () => {
+      const mid = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, dist = Infinity;
+      cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid); if (d < dist) { dist = d; best = i; } });
+      current = best;
+      dotBtns.forEach((b, i) => b.setAttribute("aria-current", i === best));
+      cards.forEach((c, i) => c.classList.toggle("is-current", i === best));
+      prev.disabled = best === 0; next.disabled = best === cards.length - 1;
+    };
+    dotBtns.forEach((b, i) => b.addEventListener("click", () => goTo(i)));
+    prev.addEventListener("click", () => goTo(current - 1));
+    next.addEventListener("click", () => goTo(current + 1));
+    track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+    addEventListener("resize", sync);
+    sync();
   };
-  const sync = () => {
-    const mid = track.scrollLeft + track.clientWidth / 2;
-    let best = 0, dist = Infinity;
-    cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid); if (d < dist) { dist = d; best = i; } });
-    current = best;
-    dotBtns.forEach((b, i) => b.setAttribute("aria-current", i === best));
-    cards.forEach((c, i) => c.classList.toggle("is-current", i === best));
-    prev.disabled = best === 0; next.disabled = best === cards.length - 1;
-  };
-  dotBtns.forEach((b, i) => b.addEventListener("click", () => goTo(i)));
-  prev.addEventListener("click", () => goTo(current - 1));
-  next.addEventListener("click", () => goTo(current + 1));
-  track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
-  addEventListener("resize", sync);
-  sync();
+  $$(".carousel[data-items]").forEach(buildCarousel);
 
   /* ---------- frases rotativas ---------- */
   const q = $("#phrase"), bar = $("#phraseBar");

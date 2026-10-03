@@ -24,7 +24,6 @@ window.BW = {
     { nome: "Robert Camargo", titulo: "Barbearia e Cafeteria BlackWhite", foto: "assets/robert.jpg", instagram: "robertcamargobw" },
     { nome: "Douglas Pereira", titulo: "Espaço VIP", foto: "assets/douglas.jpg", instagram: "douglaas_peereira" },
     { nome: "Belo Barber", titulo: "Belo Barber Studio", foto: "assets/belo.jpg", instagram: "belo.barber" },
-    { nome: "Max Soares", titulo: "Empreendedor", foto: "assets/max.jpg", instagram: "maxsoares71" },
   ],
 
   // Seção "Palestras & atrações". Com foto = palestrante; sem foto = atração (simbolo aparece no lugar da foto)
